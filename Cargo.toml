@@ -1,9 +1,50 @@
 [package]
-name = "t"
+name = "yewind"
 version = "0.1.0"
-authors = ["leang27 <52003343+leang27@users.noreply.github.com>"]
+authors = ["leang27 <hangleang127@gmail.com>"]
 edition = "2018"
+description = "A style framework for yew with Tailwind CSS framework"
+license = "GPL-3.0"
+repository = "https://github.com/hangleang/yewind"
+readme = "README.md"
+keywords = ["gui", "ui", "graphics", "interface", "components"]
+categories = ["gui"]
+
+[badges]
+maintenance = { status = "actively-developed" }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+full = [
+    "layouts",
+    "button",
+    "navbar",
+    "forms",
+    "card",
+    "modal",
+    "text",
+    "dropdown",
+    "spinner",
+    "carousel",
+]
+layouts = []
+button = []
+navbar = ["layouts", "yew_assets"]
+forms = []
+card = ["layouts"]
+modal = ["layouts"]
+dropdown = []
+spinner = []
+carousel = ["yew_assets"]
+text = ["yew_assets"]
+
 [dependencies]
+yew = "0.17"
+yewtil = "0.3"
+yew_assets = { version = "0.1", features = ["full"], optional = true }
+
+[workspace]
+members = [
+    "examples/showcase"
+]
