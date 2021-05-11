@@ -23,7 +23,6 @@ impl Component for Showcase {
     fn view(&self) -> Html {
         html! {
             <Button
-                // class=Classes::from("focus:outline-none bg-blue-500 rounded text-base text-white py-2 px-5")
                 style=button::Style::Filled
                 color=Color::Blue(500)
                 disabled=true
